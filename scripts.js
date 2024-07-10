@@ -74,3 +74,59 @@ window.onclick = function(event) {
     }
 }
 
+// VeRsIon 2
+
+// Get the modal
+var aboutModal2 = document.getElementById("aboutModal2");
+
+// Get the button that opens the modal
+var btn2 = document.getElementById("aboutBtn2");
+
+// Get the <span> element that closes the modal
+var span2 = document.getElementsByClassName("close2")[0];
+
+// When the user clicks the button, open the modal 
+btn2.onclick = function() {
+    aboutModal2.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function() {
+    aboutModal2.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == aboutModal2) {
+        aboutModal2.style.display = "none";
+    }
+}
+
+// When the user clicks the button, open the modal with fade-in effect
+btn2.onclick = function() {
+    aboutModal2.style.display = "block";
+    setTimeout(() => {
+        aboutModal2.style.opacity = 1;
+        aboutModal2.querySelector('.modal-content2').style.opacity = 1;
+    }, 10); // delay to allow CSS to render display change before starting opacity transition
+}
+
+// When closing the modal
+span2.onclick = function() {
+    aboutModal2.style.opacity = 0;
+    aboutModal2.querySelector('.modal-content2').style.opacity = 0;
+    setTimeout(() => {
+        aboutModal.style.display = "none";
+    }, 500); // delay must match the CSS opacity transition time
+}
+
+// Close when clicking outside the modal
+window.onclick = function(event) {
+    if (event.target == aboutModal2) {
+        aboutModal2.style.opacity = 0;
+        aboutModal2.querySelector('.modal-content2').style.opacity = 0;
+        setTimeout(() => {
+            aboutModal2.style.display = "none";
+        }, 500);
+    }
+}
